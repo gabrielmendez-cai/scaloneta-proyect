@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e2bd57ee6c.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="img/jpg" href="img/SCLNT.jpg"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Contacto</title>
+</head>
+<body>
+    <header class="headerPrincipal">
+        <h1 class="tituloIndex">scaloneta fan </h1>
+    </header> 
+        <nav class="navPrincipal">
+            <ul>
+                <li><a href="index.html">inicio</a></li>
+                <li><a href="#">Galeria de fotos</a></li>
+                <li><a href="#">historia</a></li>
+                <li><a href="contacto.html">contacto</a></li>                    
+            </ul>
+        </nav>        
+        <form action="" class="formulario" id="formulario">
+            <!-- Titulo -->
+            <div class="Form_div" id="FormTitle">
+				<h2>Formulario de contacto</h2>
+			</div>
+               
+			<!-- Seccion Nombre -->
+			<div class="Form_div" id="FormNombre">
+				<label for="nombre" class="FormLabel">Nombre:</label>
+				<div class="Inputs">
+					<input type="text" class="FormInput" name="nombre" id="nombre" placeholder="Nombre" pattern="[a-zA-Z]+" title="Solo letras sin espacios" required>
+				</div>
+			</div>
+
+            <!-- Seccion Apellido -->
+			<div class="Form_div" id="FormApellido">
+				<label for="Apellido" class="FormLabel">Apellido:</label>
+				<div class="Inputs">
+					<input type="text" class="FormInput" name="Apellido" id="Apellido" placeholder="Apellido" pattern="[a-zA-Z]+" title="Solo letras sin espacios" required>
+				</div>
+			</div>
+
+			<!-- Seccion Correo -->
+			<div class="Form_div" id="FormCorreo">
+				<label for="correo" class="FormLabel">Correo Electrónico:</label>
+				<div class="Inputs">
+					<input type="email" class="FormInput" name="correo" id="correo" placeholder="correo@dominio.com" title="algo@ejemplo.com" required>
+				</div>
+			</div>
+
+            <!-- Seccion Telefono -->
+			<div class="Form_div" id="FormTelefono">
+				<label for="Telefono" class="FormLabel">Nro de Telefono:</label>
+				<div class="Inputs">
+					<input type="tel" class="FormInput" name="Telefono" id="Telefono" placeholder="+54 11 xxxx-xxxx">
+				</div>
+			</div>
+
+            <!-- Seccion Titulo del Mensaje -->
+			<div class="Form_div" id="FormMensajeTitle">
+				<label for="MensajeTitle" class="FormLabel">Asunto del mensaje:</label>
+				<div class="Inputs">
+					<input type="text" class="FormInput" name="MensajeTitle" id="MensajeTitle" placeholder="Asunto del mensaje" title="Titulo del Mensaje" required>
+				</div>
+			</div>
+
+			<!-- Seccion Mensaje -->
+			<div class="Form_div" id="FormMensaje">
+				<label for="mensaje" class="FormLabel">Escribe tu mensaje:</label>
+				<div class="Inputs">
+					<input type="text" class="FormInput" name="mensaje" id="mensaje" maxlength="1000" title="Maximo 1000 Caracteres" spellcheck="true" required>
+				</div>
+			</div>
+            
+            <!-- Seccion Boton Enviar -->
+			<div class="Form_div Form-btn-enviar">
+				<button type="submit" class="Form-btn">Enviar mensaje</button>
+			</div>
+		</form>
+        <!-- Elemento ancla que no se verá en la pagina -->
+        <a href="" id="formHiden"></a>
+    <footer>
+        <div class="tituloFooter"><h2> seguinos en nuestras Redes </h3></div>
+        <div class="footerLi">
+        <ul>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-square-instagram"></i>
+            <i class="fa-brands fa-tiktok"></i>
+            <i class="fa-solid fa-envelope"></i>
+        </ul>
+        </div>
+        <p class="copyRight">scaloneta fan todos los derechos estan reservados copyright R®</p>
+   </footer>
+   <script>
+    // Este script revisará el formulario de contacto y usará los datos 
+    // para enviar un mensaje, tomando el contenido que descarga el usuario.
+    // Usa el programa local del usuario para enviar el correo.
+
+
+    // Constante que Seleciona el formulario y boton oculto
+    const $form = document.querySelector('#formulario')
+    // Constante que Seleciona el boton oculto
+    const $buttonMailto = document.querySelector('#formHiden')
+    // Escucho el evento submit del formulario
+    $form.addEventListener("submit", handleSubmit)
+    // Funcion que maneja el formulario. Recibe el evento
+    function handleSubmit(event){
+        // Evito que se refresque la pagina (default action) al darle Enviar
+        event.preventDefault();
+        // FormData que almacena y valida el formulario. Recibe this(Es el formulario $form)
+        const form = new FormData(this)
+        // Voy a modificar el atributo href del ancla oculta. Uso template literal ``
+        // En el template literal usa ${} para usar expresiones (form.get())
+        $buttonMailto.setAttribute('href', `mailto:scalonetafans@gmail.com?subject=${form.get('MensajeTitle')} - ${form.get('nombre')} ${form.get('Apellido')} | ${form.get('Telefono')}&body=${form.get('mensaje')}`) 
+        // El ancla oculta se va a hacer click automaticamente
+        $buttonMailto.click()
+        // Reinicio el formulario
+        $form.reset()
+    }
+</script>
+</body>
+</html>

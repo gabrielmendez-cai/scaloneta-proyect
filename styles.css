@@ -6,7 +6,6 @@
 body{
     background-image: linear-gradient(75deg,#03045e, #0077b6,#0096c7,#00b4d8,#48cae4,#90e0ef,#ade8f4,#caf0f8 );
     background-size: 400% 400%;
-    
 }
 
 
@@ -32,7 +31,7 @@ body{
 .headerPrincipal{
 background-color: #D7E3EB;
 background: url(./img/argentina-campeon3.jpg) no-repeat;
-width: 90rem;
+width: auto;
 height: 35rem;
 margin: 30px auto;
 background-size: cover;
@@ -110,15 +109,14 @@ flex-wrap: wrap;
 
 
 .sectionIndex{
-    display: flex;
+    display: block;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
-
 }   
-.sectionIndex div{
-    display: flex;
+.sectionIndex div {
+    display: block;
     flex-direction: row;
     justify-content: space-between;
     padding: 1rem 2rem 1rem 2rem;
@@ -126,13 +124,21 @@ flex-wrap: wrap;
 .parrafoIndex {
     font-size: 2rem;
     font-family: 'Caveat', cursive;
-   
+    text-align: justify;
+}
+.parrafoIndex ul {
+    margin-top: 1rem;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    font-family: 'Caveat', cursive;
+    text-align: justify;
+    list-style:decimal-leading-zero;
 }
 .sectionCamp  {
     display: flex;
     flex-direction: row;
-justify-content: space-around;
-border: solid 2px ;
+    justify-content: space-around;
+    border: solid 2px ;
 
 }
 .divCamp1{
@@ -142,7 +148,7 @@ border: solid 2px ;
     padding: 1rem;
     width: 50%;
     border: double 5px ;
-
+    text-align: justify;
 }
 .divCamp2{
     font-size: 1.4rem;
@@ -151,7 +157,7 @@ border: solid 2px ;
     padding: 1rem;
     width: 50%;
     border: double 5px ;
-
+    text-align: justify;
 }
 .sectionCamp p{
     padding: 1rem;
@@ -205,13 +211,104 @@ text-transform: uppercase;
 
 }
 
+/*Estilos del formulario*/
+
+.formulario {
+    display: grid; /*Uso formato de grillas*/
+	grid-template-columns: auto auto; /* Uso dos columnas que usan una fraccion del espacio */
+    grid-template-rows: auto auto auto auto auto;
+    gap: 10px; /* Espacio entre Filas */
+    width: 35%; /* Ancho es lo que ocupa el contenido interno*/
+    margin: 3em auto; /* Lo centro */
+    justify-content: center;
+    background-color: #caf0f8;
+    border: 2px solid #5c5c5c;
+    border-radius: 10px;
+}
+.Form_div {
+    margin: 0.5em 1.5em;
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    font-weight: 600;
+    width: auto;
+}
+.FormInput {
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    width: 100%;
+    padding:5px;
+    border-radius: 10px;
+    margin-top: .25em;
+}
+.FormInput:invalid {
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    width: 100%;
+    padding:5px;
+    border-radius: 10px;
+    margin-top: .25em;
+    border-color: #dd2c00;
+}
+#FormTitle {
+    text-align: center;
+    padding-top: 1rem;
+    grid-column: span 2
+}
+#FormNombre {
+    padding-top: 0.5rem;
+    grid-column: span 1
+}
+#FormApellido {
+    padding-top: 0.5rem;
+    grid-column: span 1
+}
+#FormCorreo {
+    grid-column: span 2
+}
+#FormTelefono {
+    grid-column: span 2
+}
+#FormMensajeTitle {
+    grid-column: span 2 /* Ocupa las dos columnas*/
+}
+#FormMensaje {
+    grid-column: span 2 /* Ocupa las dos columnas*/
+}
+#mensaje {
+    height: 80px;
+    text-align: justify;
+}
+.Form-btn-enviar {
+    padding-bottom: 1rem;
+    grid-column: 1/3;
+}
+.Form-btn {
+    padding: .375rem .75rem;
+    border: 1px solid #00000;
+    border-radius: .25rem;
+    color: #000;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out;
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+  }
+.Form-btn:hover, .Form-btn:active, .Form-btn:focus {
+    color: #caf0f8;
+    background-color: #000;
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+  }
+.formHiden {
+    opacity: 0;
+}
+
+
 /*m queries  tablet*/
 
 @media screen and (max-width:768px ){
     .headerPrincipal{
         background-color: #D7E3EB;
         background: url(./img/argentina-campeon3.jpg) no-repeat;
-        width: 47rem;
+        width:auto;
         height: 17rem;
         margin: 8px auto;
         background-size: cover;
@@ -229,7 +326,7 @@ text-transform: uppercase;
         display: block;
     }
 
-    .parrafoIndex p{
+    .parrafoIndex p, ul{
         font-size: 1.5rem;
     }
     iframe{
@@ -256,12 +353,32 @@ text-transform: uppercase;
     .copyRight{
         font-size: 0.5rem;
     }
+    .formulario {
+        display: block; /*Uso formato de grillas*/
+        gap: 10px; /* Espacio entre Filas */
+        width: 50%; /* Ancho es lo que ocupa el contenido interno*/
+        border-radius: 10px;
+    }
+    .Form_div {
+        margin: 0.5em 1.5em;
+        font-size: 0.8rem;
+        font-weight: 600;
+        width: 85%;
+    }
+    .FormInput {
+        font-family: 'Caveat', cursive;
+        font-size: 0.8rem;
+        width: 100%;
+        border-radius: 10px;
+        margin-top: .25em;
+    }
 }
+
 /*m queries  mobile*/
 
 @media screen and (max-width:500px ){
     .headerPrincipal{
-        width: 31rem;
+        width: auto;
         height: 14rem;
     }
     .tituloIndex{
@@ -278,7 +395,7 @@ text-transform: uppercase;
         font-size: 3rem;
     }
 
-    .parrafoIndex p{
+    .parrafoIndex p, ul{
         font-size: 1.3rem;
     }
 
@@ -298,7 +415,25 @@ text-transform: uppercase;
         font-size: 0.8rem;
         padding: 25px;
     }
-
+    .formulario {
+        display: block; /*Uso formato de grillas*/
+        gap: 10px; /* Espacio entre Filas */
+        width: 90%; /* Ancho es lo que ocupa el contenido interno*/
+        border-radius: 10px;
+    }
+    .Form_div {
+        margin: 0.5em 1.5em;
+        font-size: 0.8rem;
+        font-weight: 600;
+        width: 85%;
+    }
+    .FormInput {
+        font-family: 'Caveat', cursive;
+        font-size: 0.8rem;
+        width: 100%;
+        border-radius: 10px;
+        margin-top: .25em;
+    }
 
 }
 
