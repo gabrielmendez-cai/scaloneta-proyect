@@ -1,0 +1,304 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    background-image: linear-gradient(75deg,#03045e, #0077b6,#0096c7,#00b4d8,#48cae4,#90e0ef,#ade8f4,#caf0f8 );
+    background-size: 400% 400%;
+    
+}
+
+
+
+.headerClass{
+    padding: 25px 40px;
+    font-family: 'Caveat', cursive;
+    text-transform:uppercase;
+    
+}
+
+.tituloIndex{
+    font-size: 8rem;
+    text-transform: uppercase;
+    font-family: 'Caveat', cursive;
+    color: #d7e3eb;
+    
+    }
+    .animate__animated.animate__backInLeft{
+        --animate-duration: 2s;
+    }
+
+.headerPrincipal{
+background-color: #D7E3EB;
+background: url(./img/argentina-campeon3.jpg) no-repeat;
+width: 90rem;
+height: 35rem;
+margin: 30px auto;
+background-size: cover;
+
+
+
+}
+
+.navPrincipal{
+    font-size: 1.9rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 4px solid #7c7a7a;
+    font-family: 'Caveat', cursive;
+    background-color:#caf0f8;
+    padding: 0.05rem;
+    margin-left: 2.6rem;
+    margin-right: 2.6rem;
+   
+}
+
+.navPrincipal ul{
+display: flex;
+flex-direction:row;   
+justify-content:space-around; 
+flex-wrap: wrap;
+
+}
+.navPrincipal ul li{
+    
+    
+    margin-top: 1rem;
+   
+}
+.navPrincipal li a:hover{
+    background-color: #264653;
+    border-radius: 15px;
+   
+     
+}
+.navPrincipal a{
+    text-decoration: none;
+    color: #1e1e1c;
+   
+}
+
+.tituloClass{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.navPrincipal ul li{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: end;
+}
+.tituloPrinIndex{
+    font-size: 5rem;
+    font-family: 'Caveat', cursive;
+    padding: 3rem;
+    text-align: center;
+    color: #232221;
+    
+}
+.parrafoIndex p{
+    font-size: 1.6rem;
+    font-family: 'Caveat', cursive;
+}
+
+
+
+.sectionIndex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+
+}   
+.sectionIndex div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 2rem 1rem 2rem;
+} 
+.parrafoIndex {
+    font-size: 2rem;
+    font-family: 'Caveat', cursive;
+   
+}
+.sectionCamp  {
+    display: flex;
+    flex-direction: row;
+justify-content: space-around;
+border: solid 2px ;
+
+}
+.divCamp1{
+    font-size: 1.4rem;
+    font-family: 'Caveat', cursive;
+    padding-left: 2rem;
+    padding: 1rem;
+    width: 50%;
+    border: double 5px ;
+
+}
+.divCamp2{
+    font-size: 1.4rem;
+    font-family: 'Caveat', cursive;
+    padding-left: 2rem;
+    padding: 1rem;
+    width: 50%;
+    border: double 5px ;
+
+}
+.sectionCamp p{
+    padding: 1rem;
+
+}
+section h2{
+    display: flex;
+    justify-content: center;
+    text-transform: capitalize;
+    padding-top: 2rem;
+   
+}
+footer{
+    background-color: #5c5c5c;
+}
+
+
+
+.tituloFooter{
+    font-size: 1.5rem;
+    font-family:'Caveat', cursive; 
+    
+}
+.tituloFooter h2{
+    display: flex;
+    flex-direction: row;
+justify-content: center;
+padding-top: 2rem;
+padding-bottom: 4rem;
+text-transform: uppercase;
+}
+.footerLi{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 3rem;
+}
+
+.footerLi i{
+    padding: 1rem 4rem;
+    font-size: 2rem;
+
+}
+.copyRight{
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  
+    text-transform: uppercase;  
+
+}
+
+/*m queries  tablet*/
+
+@media screen and (max-width:768px ){
+    .headerPrincipal{
+        background-color: #D7E3EB;
+        background: url(./img/argentina-campeon3.jpg) no-repeat;
+        width: 47rem;
+        height: 17rem;
+        margin: 8px auto;
+        background-size: cover;
+   } 
+    .tituloIndex{
+        font-size: 4rem;
+    }
+    .navPrincipal{
+        margin: 0 0.6rem 0 0.6rem;
+    }
+    .tituloPrinIndex{
+        font-size: 4rem;
+    }
+    .sectionIndex{
+        display: block;
+    }
+
+    .parrafoIndex p{
+        font-size: 1.5rem;
+    }
+    iframe{
+        height: 500px;
+    }
+    .divCamp1{
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .divCamp2{
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .tituloFooter{
+        font-size: 1.2rem;
+    }
+    
+    .footerLi i{
+        font-size: 1rem;
+    }
+
+    .copyRight{
+        font-size: 0.5rem;
+    }
+}
+/*m queries  mobile*/
+
+@media screen and (max-width:500px ){
+    .headerPrincipal{
+        width: 31rem;
+        height: 14rem;
+    }
+    .tituloIndex{
+        font-size: 3rem;
+    }
+    .navPrincipa{
+        font-size: 1.4rem;
+    }
+    .navPrincipal ul{
+        display: block;
+        font-size: 1.4rem;
+    }
+    .tituloPrinIndex{
+        font-size: 3rem;
+    }
+
+    .parrafoIndex p{
+        font-size: 1.3rem;
+    }
+
+    .divCamp1{
+        font-size: 1.1rem;
+    }
+
+    .divCamp2{
+        font-size: 1.1rem;
+    }
+    .tituloFooter {
+        font-size: 1rem; 
+
+    }
+
+    .footerLi i{
+        font-size: 0.8rem;
+        padding: 25px;
+    }
+
+
+}
+
