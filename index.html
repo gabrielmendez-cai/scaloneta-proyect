@@ -56,9 +56,9 @@
             <li>Ángel Di María (Juventus)</li>
             <li>Lautaro Martínez (Inter)</li>
             <li>Julián Alvarez (Manchester City)</li>
-            <li>Ángel Correa</li>
-            <li>Thiago Almada</li>
-            <li>Paulo Dybala (Roma)</li>
+            <li>Ángel Correa (Atlético de Madrid)</li>
+            <li>Thiago Almada (Atlanta United F. C.)</li>
+            <li>Paulo Dybala (Roma).</li>
         </ul>
             
         </div>
@@ -77,6 +77,38 @@
             <h2>campeones del mundo 1986</h2>
             <p>Luis Islas, Nery Pumpido, Héctor Zelada, José Luis Brown, Daniel Passarella, Néstor Clausen, José Luis Cuciuffo, Oscar Garré, Oscar Ruggeri, Sergio Batista, Ricardo Bochinis, Jorge Burruchagas, Diego Maradona, Héctor Enrique, Ricardo Giusti, Julio Olarticoechea, Carlos Daniel Tapia, Marcelo Trobbiani, Sergio Almirón, Claudio Borghi, Jorge Valdano, Pedro Pasculli</p>
         </div>
+     </section>
+     <section class="API">
+        <div id="wg-api-football-fixtures"
+             data-host="v3.football.api-sports.io"
+             data-refresh="900"
+             data-date="fecha"
+             data-league="128"
+             data-season="2023"
+             data-key="240d4f6a3e8af5b00e8bbfefdfaf2409"
+             data-theme="false"
+             data-show-errors="true"
+             class="api_football_loader">
+        </div>
+        <script type="module" 
+                src="https://widgets.api-sports.io/football/1.1.8/widget.js">
+        </script>
+        <script>
+            // Obtén la referencia al elemento HTML con el id "wg-api-football-fixtures"
+            const element = document.getElementById('wg-api-football-fixtures');
+        
+            // Función para obtener la fecha actual en el formato deseado: "yyyy-mm-dd"
+            function getFormattedDate() {
+              const today = new Date();
+              const year = today.getFullYear();
+              const month = String(today.getMonth() + 1).padStart(2, '0');
+              const day = String(today.getDate()).padStart(2, '0');
+              const formattedDate = `${year}-${month}-${day}`;
+              return formattedDate;
+            }
+            // Actualiza el atributo "data-date" con la fecha actual
+            element.setAttribute('data-date', getFormattedDate());
+        </script>
      </section>
   
    <footer>
