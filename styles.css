@@ -600,6 +600,10 @@ text-transform: uppercase;
     .parrafoIndex p, ul{
         font-size: 1.3rem;
     }
+    
+    .parrafoIndex li{
+        font-size: 1.1rem;
+    }
 
     .divCamp1{
         font-size: 1.1rem;
